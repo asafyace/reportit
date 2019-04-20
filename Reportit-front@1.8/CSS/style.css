@@ -1,0 +1,165 @@
+.page-caption {
+    margin:0,auto;
+    display:block;
+}
+.page-title { 
+    font-size: 46px;
+     line-height: 1; 
+     color: #fff; 
+     font-weight: 600; 
+     text-align: center;
+     margin:0,auto; 
+     padding-top: 100px;
+     font-family: 'Saira Semi Condensed', sans-serif;
+}
+ .page-title2 { 
+    font-size: 46px;
+     line-height: 1; 
+     color: black; 
+     font-weight: 600; 
+     text-align: center;
+     margin:0,auto; 
+     padding-top: 100px;
+     font-family: 'Saira Semi Condensed', sans-serif;
+ }
+#logoImg{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#contactForm{
+    display:none;
+    margin: 0, auto;
+    height:50%;
+}
+
+#hide{
+    display:none;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+
+}   
+.center{
+    text-align:center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 0;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.img-responsive {
+    height: 120px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.inv-upload {
+    display: none;
+}
+.info {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    bottom: 25%;
+    height: 100%;
+}
+.nav-item {
+    margin-left: 10%;
+}
+.goog-logo-link {
+    display: none !important;
+}
+.goog-te-gadget {
+    color: transparent !important;
+}
+.goog-te-gadget .goog-te-combo {
+    color: blue !important;
+}
+.ncolor{
+    background-color: #0E1D70;
+}
+.pinkBg {
+    background-color: #0E1D70!important;
+    background-image: linear-gradient(90deg, #0E1D70, rgb(165, 169, 190));
+}
+.intro-banner-vdo-play-btn i{
+    line-height:56px;
+    font-size:30px
+}
+.intro-banner-vdo-play-btn .ripple{
+    position: absolute;
+    width:160px;
+    height:160px;
+    left:50.5%;
+    bottom:200%;
+    opacity:0;
+    margin:-80px 0 0 -80px;
+    border-radius:100px;
+    -webkit-animation:ripple 1.8s infinite;
+    animation:ripple 1.8s infinite
+}
+@-webkit-keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+@keyframes ripple{
+    0%{
+        opacity:1;
+        -webkit-transform:scale(0);
+        transform:scale(0)
+    }
+    100%{
+        opacity:0;
+        -webkit-transform:scale(1);
+        transform:scale(1)
+    }
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(2){
+    animation-delay:.3s;
+    -webkit-animation-delay:.3s
+}
+.intro-banner-vdo-play-btn .ripple:nth-child(3){
+    animation-delay:.6s;
+    -webkit-animation-delay:.6s
+}
+.hero-bkg-animated {
+    background: gray url(../Images/download.png) repeat 0 0;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    height: 30%;
+    box-sizing: border-box;
+    -webkit-animation: slide 20s linear infinite;
+
+  }
+  @-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+
+
+
