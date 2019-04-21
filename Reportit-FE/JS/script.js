@@ -28,7 +28,8 @@ var img = $(this).children('img');
 });//End Ready
 
 function confirmMsg(){
-  var x= confirm("Your photo has been submitted");
+  
+  var x= confirm("Your Report has been submitted and send");
   if(x==true)
     document.getElementById("hide").style.display="flex";
     document.getElementById("hide").style.margin="0, auto";
