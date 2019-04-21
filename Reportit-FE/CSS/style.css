@@ -98,7 +98,7 @@ footer {
     background-image: linear-gradient(90deg, #0E1D70, rgb(165, 169, 190));
 }
 .intro-banner-vdo-play-btn i{
-    line-height:56px;
+    line-height:50px;
     font-size:30px
 }
 .intro-banner-vdo-play-btn .ripple{
@@ -159,6 +159,10 @@ footer {
     from { background-position: 0 0; }
     to { background-position: -400px 0; }
 }
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+   }
 
 
 
