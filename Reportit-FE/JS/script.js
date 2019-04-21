@@ -23,14 +23,39 @@ var img = $(this).children('img');
 });//End on click
 
 
-
-
 });//End Ready
 
-function confirmMsg(){
-  
-  var x= confirm("Your Report has been submitted and send");
-  if(x==true)
-    document.getElementById("hide").style.display="flex";
-    document.getElementById("hide").style.margin="0, auto";
+
+/*
+let reportData =
+{
+  reporterName = undefined,
+  reporterPhone = undefined,
+  reporterEmail = undefined,
+  reportLocation = 
+  {
+    latitude = undefined,
+    longitude = undefined
+  },
+  reportpicture = undefined
 }
+
+//update:
+document.getElementById("reportForm").addEventListener('submit', () =>
+{
+  //validation, validator (npm)
+  //image size < 1.5 M
+  //resize image with sharp (npm)
+  
+  //fill report data:
+  reportData.reporterName = document.getElementById("reporterName").value
+  //the rest of data
+  
+
+
+  //when all data is ready in reportData
+  //http request (POST) to send all JSON data
+  //http request (POST) upload picture
+  //error handler = if response is error
+})
+*/

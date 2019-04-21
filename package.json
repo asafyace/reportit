@@ -1,0 +1,22 @@
+{
+  "name": "reportit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asafyace/Reportit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asafyace/Reportit/issues"
+  },
+  "homepage": "https://github.com/asafyace/Reportit#readme",
+  "dependencies": {
+    "env-cmd": "^8.0.2"
+  }
+}

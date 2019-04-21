@@ -17,17 +17,13 @@ body {
     padding-top: 100px;
     font-family: 'Saira Semi Condensed', sans-serif;
 }
-
-.page-title2 {
-    font-size: 46px;
-    line-height: 1;
-    color: black;
-    font-weight: 600;
-    text-align: center;
-    margin: 0, auto;
-    padding-top: 100px;
+i {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 300;
     font-family: 'Saira Semi Condensed', sans-serif;
 }
+
 
 #logoImg {
     display: block;
@@ -199,4 +195,13 @@ footer {
     width: 100%;
     /* The width is the width of the web page */
     margin-bottom: 60px;
+}
+#cancelBtn{
+    background-color: red;
+    text-align: right;
+    float: right;
+}
+#sendBtn{
+    background-color: 0E1D70;
+
 }
