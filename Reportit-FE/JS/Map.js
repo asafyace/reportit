@@ -20,7 +20,7 @@ function initMap() {
             //reportData.reportLocation.latitude = pos.lat
             
             infoWindow.setPosition(pos);
-            infoWindow.setContent('&nbsp &nbsp &nbsp 📍ReportIt Location📍');
+            infoWindow.setContent('&nbsp &nbsp &nbsp &nbsp 📍ReportIt Location📍');
             infoWindow.open(map);
             map.setCenter(pos);
         }, function () {

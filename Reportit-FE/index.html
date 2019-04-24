@@ -76,9 +76,8 @@
             <span class="ripple pinkBg"></span>
             <span class="ripple pinkBg"></span>
             <div class="inv-upload">
-                <input id="file-input" type="file" capture="camera" accept="image/jpeg, image/png" data-toggle="modal" data-target="#ModalForm"/>
+                <input id="file-input" data-toggle="modal" data-target="#ModalForm" />
             </div>
-
         </label>
     </div>
     <!-- end header -->
@@ -92,12 +91,18 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title center">For further status about your report</h1>
+                    <h1 class="modal-title center">Fill in your report</h1>
                 </div>
                 <img class="center" src="Images/reporticon.png" alt="reporticon" height="42" width="42" />
                 <div class="modal-body">
                     <form id="reportForm">
                         <input type="hidden" name="_token" value="">
+                        <div class="form-group">
+                            <label class="control-label">Upload Picture</label>
+                            <div>
+                                <input id="file-input" type="file" capture="camera" accept="image/gif, image/jpeg, image/png"  required />
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="control-label">Full name</label>
                             <div>
@@ -140,7 +145,7 @@
     </footer>
     <script>
         function myFunction() {
-            swal("💻Our Team💻", "Dedicated team for  making the world a safer place with ReportIt an easy reporting system!", "success")}
+            swal("💻Our Team💻", "Dedicated to making the world a safer place. ReportIt - an easy reporting system!", "success")}
     </script>
 </body>
 
