@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label class="control-label">Upload Picture</label>
                             <div>
-                                <input id="file-input" type="file" capture="camera" accept="image/gif, image/jpeg, image/png"  required />
+                                <input id="file-input" type="file" name="MAX_FILE_SIZE" value="150000" capture="camera" accept="image/jpeg, image/png" size="20" required />
                             </div>
                         </div>
                         <div class="form-group">
@@ -124,7 +124,7 @@
                         <div class="form-group">
                             <div>
                                 <button type="submit" class="btn btn-info" id="sendBtn">Send your report!</button>
-                                <button type="Cancel" class="btn btn-info" id="cancelBtn">Cancel</button>
+                                <button type="Cancel" class="btn btn-info" id="cancelBtn" formnovalidate>Cancel</button>
                             </div>
                         </div>
                     </form>
