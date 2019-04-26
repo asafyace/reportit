@@ -1,6 +1,6 @@
 //Google map
 
-var map, infoWindow,pos,data;
+var map, infoWindow,pos;
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -39,14 +39,20 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
+//Image validation 
+
 //Google map
+var x,data;
 
 // Make json
 function onSubmit( form )
 {
-  data = JSON.stringify( $(form).serializeArray()); 
+  x = document.getElementById("myFile").value;
+  data = JSON.stringify(x);
+  data += JSON.stringify( $(form).serializeArray()); 
   data += JSON.stringify(pos);
-  console.log( data );
+  console.log(data);
   document.form.submit();
   return false; //don't submit
 }
