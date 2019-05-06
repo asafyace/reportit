@@ -205,3 +205,15 @@ footer {
     background-color: 0E1D70;
 
 }
+
+#myProgress {
+    
+    width: 100%;
+    background-color: grey;
+  }
+  
+  #myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+  }

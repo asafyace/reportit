@@ -1,7 +1,6 @@
 //Google map
 
 var map, infoWindow,pos;
-
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -39,25 +38,47 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
-
 //Image validation 
 
-//Google map
-var x,data;
-
+var _validFileExtensions = [".jpg", ".jpeg", ".png"];    
+function ValidateSingleInput(oInput) {
+    if (oInput.type == "file") {
+        var sFileName = oInput.value;
+         if (sFileName.length > 0) {
+            var blnValid = false;
+            for (var j = 0; j < _validFileExtensions.length; j++) {
+                var sCurExtension = _validFileExtensions[j];
+                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                    blnValid = true;
+                    break;
+                }
+            }
+             
+            if (!blnValid) {
+                alert("Sorry, " + sFileName + " is not valid Only png jpg jpeg files are permitted");
+                oInput.value = "";
+                return false;
+            }
+        }
+    }
+    return true;
+}
 // Make json
+
+var x,data;
 function onSubmit( form )
 {
-  x = document.getElementById("myFile").value;
-  data = JSON.stringify(x);
-  data += JSON.stringify( $(form).serializeArray()); 
-  data += JSON.stringify(pos);
-  console.log(data);
-  document.form.submit();
-  return false; //don't submit
-}
+    x = document.getElementById("myFile").value;
+    data = JSON.stringify(x);
+    data += JSON.stringify($(form).serializeArray());
+    data += JSON.stringify(pos);
+    console.log(data);
+    document.form.submit();
+    return false; //don't submit
 
+}
 //FAQ Menu
+
 //Accordian Action
 var action = 'click';
 var speed = "500";
@@ -78,3 +99,18 @@ var img = $(this).children('img');
   img.toggleClass('rotate');
 });//End on click
 });//End Ready
+//Progress bar
+
+function onSubmit( form ){
+    var elem = document.getElementById("myBar"); 
+    var width = 1;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++; 
+        elem.style.width = width + '%'; 
+      }
+    }
+  }
