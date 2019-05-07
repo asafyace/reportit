@@ -43,7 +43,27 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 //Image validation 
+$().ready(function () {
+    $('[type="file"]').change(function () {
+        var fileInput = $(this);
+        if (fileInput.length && fileInput[0].files && fileInput[0]
+            .files.length) {
+            var url = window.URL || window.webkitURL;
+            var image = new Image();
+            image.onerror = function () {
+                swal({
+                        title: "You must insert a JPEG or JPG or PNG picture type!",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                document.getElementById('myFile').value="";
 
+            };
+            image.src = url.createObjectURL(fileInput[0].files[0]);
+        }
+    });
+});
 var _validFileExtensions = [".jpg", ".jpeg", ".png"];    
 function ValidateSingleInput(oInput) {
     if (oInput.type == "file") {

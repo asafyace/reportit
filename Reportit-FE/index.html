@@ -98,27 +98,9 @@
                     <form id="reportForm" onsubmit='return onSubmit(this)'>
                         <input type="hidden" name="_token" value="">
                         <div class="form-group">
-                            <label class="control-label">Upload Picture</label>
+                            <label class="control-label"><b>Upload Picture</b></label>
                             <div>
                                 <input id="myFile" type="file" capture="camera" accept="image/jpeg, image/png" name="myFile" required />
-                                <script type="text/javascript">
-                                    $().ready(function () {
-                                        $('[type="file"]').change(function () {
-                                            var fileInput = $(this);
-                                            if (fileInput.length && fileInput[0].files && fileInput[0]
-                                                .files.length) {
-                                                var url = window.URL || window.webkitURL;
-                                                var image = new Image();
-                                                image.onerror = function () {
-                                                    alert('You must insert a JPEG or PNG picture type!');
-                                                    document.getElementById('myFile').value="";
-
-                                                };
-                                                image.src = url.createObjectURL(fileInput[0].files[0]);
-                                            }
-                                        });
-                                    });
-                                </script>
                             </div>
                         </div>
               
