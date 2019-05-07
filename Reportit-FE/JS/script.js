@@ -1,3 +1,6 @@
+//info messege
+function myFunction() {
+    swal("💻Our Team💻", "Dedicated to making the world a safer place. ReportIt - an easy reporting system!" ,"success")}
 //Google map
 
 var map, infoWindow,pos;
