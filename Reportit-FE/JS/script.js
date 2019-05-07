@@ -1,8 +1,8 @@
 //info messege
 function myFunction() {
-    swal("💻Our Team💻", "Dedicated to making the world a safer place. ReportIt - an easy reporting system!" ,"success")}
-//Google map
+    swal("💻Our Team💻", "We are dedicated to making a safer world. \n ReportIt - an easy reporting system! \n \n Reportit gives you an easy way to report about municipal hazards" ,"success")}
 
+//Google map
 var map, infoWindow,pos;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -35,7 +35,6 @@ function initMap() {
     }
     
 }
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
@@ -43,6 +42,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
+
 //Image validation 
 $().ready(function () {
     $('[type="file"]').change(function () {
@@ -55,39 +55,16 @@ $().ready(function () {
                 swal({
                         title: "You must insert a JPEG or JPG or PNG picture type!",
                         icon: "warning",
-                        buttons: true,
+ 
                         dangerMode: true,
                     })
-                document.getElementById('myFile').value="";
+                document.getElementById('File').value="";
 
             };
             image.src = url.createObjectURL(fileInput[0].files[0]);
         }
     });
 });
-var _validFileExtensions = [".jpg", ".jpeg", ".png"];    
-function ValidateSingleInput(oInput) {
-    if (oInput.type == "file") {
-        var sFileName = oInput.value;
-         if (sFileName.length > 0) {
-            var blnValid = false;
-            for (var j = 0; j < _validFileExtensions.length; j++) {
-                var sCurExtension = _validFileExtensions[j];
-                if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
-                    blnValid = true;
-                    break;
-                }
-            }
-             
-            if (!blnValid) {
-                alert("Sorry, " + sFileName + " is not valid Only png jpg jpeg files are permitted");
-                oInput.value = "";
-                return false;
-            }
-        }
-    }
-    return true;
-}
 
 //FAQ Menu
 
