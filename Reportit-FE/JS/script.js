@@ -20,7 +20,8 @@ function initMap() {
                 lng: position.coords.longitude
             };
             //reportData.reportLocation.latitude = pos.lat
-            
+            document.getElementById("lat").value = pos.lat;
+            document.getElementById("lng").value = pos.lng;
             infoWindow.setPosition(pos);
             infoWindow.setContent('&nbsp &nbsp &nbsp &nbsp 📍ReportIt Location📍');
             infoWindow.open(map);
@@ -87,20 +88,7 @@ function ValidateSingleInput(oInput) {
     }
     return true;
 }
-// Make json
 
-var x,data;
-function onSubmit( form )
-{
-    x = document.getElementById("myFile").value;
-    data = JSON.stringify(x);
-    data += JSON.stringify($(form).serializeArray());
-    data += JSON.stringify(pos);
-    console.log(data);
-    document.form.submit();
-    return false; //don't submit
-
-}
 //FAQ Menu
 
 //Accordian Action
@@ -125,16 +113,16 @@ var img = $(this).children('img');
 });//End Ready
 //Progress bar
 
-function onSubmit( form ){
-    var elem = document.getElementById("myBar"); 
-    var width = 1;
-    var id = setInterval(frame, 10);
-    function frame() {
-      if (width >= 100) {
-        clearInterval(id);
-      } else {
-        width++; 
-        elem.style.width = width + '%'; 
-      }
-    }
-  }
+//function onSubmit( form ){
+  //  var elem = document.getElementById("myBar"); 
+    //var width = 1;
+    //var id = setInterval(frame, 10);
+    //function frame() {
+     // if (width >= 100) {
+       // clearInterval(id);
+      //} else {
+       // width++; 
+        //elem.style.width = width + '%'; 
+     // }
+    //}
+  //}

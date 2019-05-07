@@ -95,12 +95,12 @@
                 </div>
                 <img class="center" src="Images/reporticon.png" alt="reporticon" height="42" width="42" />
                 <div class="modal-body">
-                    <form id="reportForm" onsubmit='return onSubmit(this)'>
+                    <form id="reportForm" method="post" enctype="multipart/form-data" >
                         <input type="hidden" name="_token" value="">
                         <div class="form-group">
                             <label class="control-label"><b>Upload Picture</b></label>
                             <div>
-                                <input id="myFile" type="file" capture="camera" accept="image/jpeg, image/png" name="myFile" required />
+                                <input id="myFile" type="file" capture="camera" accept="image/jpeg, image/png" name="reportpicture" required />
                             </div>
                         </div>
               
@@ -122,15 +122,14 @@
                                 <input type="tel"  pattern="[0-9]{10}" class="form-control input-lg" name="Phone Number">
                             </div>
                         </div>
+                        <input type="hidden" id="lat" name="lat"/>
+                        <input type="hidden" id="lng" name="lng"/>
                         <div class="form-group">
                             <div>
 
                                 <button type="submit" class="btn btn-info" id="btn">Send your report!</button>
                                 <button type="Cancel" class="btn btn-info" id="cancelBtn" formnovalidate>Cancel</button>
                             </div>
-                        </div>
-                        <div id="myProgress">
-                                <div id="myBar"></div>
                         </div>
                     </form>
                 </div>
