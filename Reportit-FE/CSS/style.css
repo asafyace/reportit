@@ -17,11 +17,14 @@ body {
     padding-top: 100px;
     font-family: 'Saira Semi Condensed', sans-serif;
 }
+#fonti {
+    font-family: 'Oswald', sans-serif;
+}
 i {
-    font-size: 40px;
+    font-size: 10px;
     color: #fff;
     font-weight: 300;
-    font-family: 'Saira Semi Condensed', sans-serif;
+    
 }
 
 
@@ -89,6 +92,8 @@ footer {
 
 .nav-item {
     margin-left: 10%;
+    font-size: 50%;
+    font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 .goog-logo-link {
@@ -205,3 +210,4 @@ footer {
     background-color: 0E1D70;
 
 }
+
