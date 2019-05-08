@@ -42,14 +42,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
-
 //Image validation 
-$().ready(function () {
-    $(".custom-file-input").on("change", function () {
-    var fileName = $(this).val().split("\\").pop();
-    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-});
-});
+
 $().ready(function () {
     $('[type="file"]').change(function () {
         var fileInput = $(this);
@@ -59,13 +53,19 @@ $().ready(function () {
             var image = new Image();
             image.onerror = function () {
                 swal({
-                        title: "You must insert a JPEG or JPG or PNG picture type!",
-                        icon: "warning",
-                        dangerMode: true,
-                    })
-                document.getElementById('File').value="";
+                    title: "Please upload a JPEG or JPG or PNG picture format!",
+                    icon: "warning",
+                    dangerMode: true,
+                })
+                document.getElementById('File').value = "";
             };
             image.src = url.createObjectURL(fileInput[0].files[0]);
+            $().ready(function () {
+                $(".custom-file-input").on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                });
+            });
         }
     });
 });
