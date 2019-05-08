@@ -20,8 +20,8 @@ function initMap() {
                 lng: position.coords.longitude
             };
             //reportData.reportLocation.latitude = pos.lat
-            document.getElementById("lat").value = pos.lat;
-            document.getElementById("lng").value = pos.lng;
+            document.getElementById("latitude").value = pos.lat;
+            document.getElementById("longitude").value = pos.lng;
             infoWindow.setPosition(pos);
             infoWindow.setContent('&nbsp &nbsp &nbsp &nbsp 📍ReportIt Location📍');
             infoWindow.open(map);
@@ -45,6 +45,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 //Image validation 
 $().ready(function () {
+    $(".custom-file-input").on("change", function () {
+    var fileName = $(this).val().split("\\").pop();
+    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+});
+});
+$().ready(function () {
     $('[type="file"]').change(function () {
         var fileInput = $(this);
         if (fileInput.length && fileInput[0].files && fileInput[0]
@@ -55,19 +61,23 @@ $().ready(function () {
                 swal({
                         title: "You must insert a JPEG or JPG or PNG picture type!",
                         icon: "warning",
- 
                         dangerMode: true,
                     })
                 document.getElementById('File').value="";
-
             };
             image.src = url.createObjectURL(fileInput[0].files[0]);
         }
     });
 });
 
+//Close Toggle form
+$(document).ready(function(){
+    $("#buttonC").click(function(){
+      location.replace("https://reportit.netlify.com/")
+      });
+  });
+  
 //FAQ Menu
-
 //Accordian Action
 var action = 'click';
 var speed = "500";
@@ -88,18 +98,5 @@ var img = $(this).children('img');
   img.toggleClass('rotate');
 });//End on click
 });//End Ready
-//Progress bar
 
-//function onSubmit( form ){
-  //  var elem = document.getElementById("myBar"); 
-    //var width = 1;
-    //var id = setInterval(frame, 10);
-    //function frame() {
-     // if (width >= 100) {
-       // clearInterval(id);
-      //} else {
-       // width++; 
-        //elem.style.width = width + '%'; 
-     // }
-    //}
-  //}
+// Add the following code if you want the name of the file appear on select

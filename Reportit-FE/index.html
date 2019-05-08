@@ -1,6 +1,7 @@
 <!--ReportIt--->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>ReportIT</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,10 +29,12 @@
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
 </head>
 
 <body id="fonti">
-    <!-- menu navbar -->
+
+    <!-- Menu navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark ncolor">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -39,20 +42,21 @@
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto col-sm-3 col-md-3 ">
                 <li class="nav-item ">
-                    <a class="nav-link " href="index.html"><i class="fa fa-home fa-2x " aria-hidden="true"> Home</i></a>
+                    <a class="nav-link " href="index.html"><i class="fa fa-home fa-4x " aria-hidden="true"> Home</i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="mailto:contact@reportit.com"><i class="fa fa-envelope fa-2x"> Mail</i></a>
+                    <a class="nav-link " href="mailto:contact@reportit.com"><i class="fa fa-envelope fa-4x">
+                            Contact</i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="Includes/FAQ.htm"><i class="fa fa-question fa-2x"> FAQ</i></a>
+                    <a class="nav-link" href="Includes/FAQ.htm"><i class="fa fa-question fa-4x"> FAQ</i></a>
                 </li>
             </ul>
         </div>
     </nav>
-    <!-- end navbar -->
+    <!-- End navbar -->
 
-    <!-- header -->
+    <!-- Header -->
     <div class="hero-bkg-animated">
         <div class="container">
             <div class="col-sm-12">
@@ -75,12 +79,16 @@
             </div>
         </label>
     </div>
-    <!-- end header -->
+    <!-- End header -->
+
     <!--Google map -->
     <div id="map"></div>
-    <script src="JS/script.js"></script> 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIEJdFa483vyt3OjA7_7KKJSeigyBIJnk&callback=initMap"></script>
+    <script src="JS/script.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBIEJdFa483vyt3OjA7_7KKJSeigyBIJnk&callback=initMap">
+    </script>
     <!--End Google map -->
+
     <!--Toggle form -->
     <div id="ModalForm" class="modal fade">
         <div class="modal-dialog" role="document">
@@ -90,54 +98,63 @@
                 </div>
                 <img class="center" src="Images/reporticon.png" alt="reporticon" height="42" width="42" />
                 <div class="modal-body">
-                    <form action="https://report-it.herokuapp.com/reports/create" method="post" enctype="multipart/form-data" id="reportForm">
-                        <input type="hidden" name="_token" value="">
+                    <form action="https://report-it.herokuapp.com/reports/create" method="post"
+                        enctype="multipart/form-data" id="reportForm">
                         <div class="form-group">
                             <label class="control-label"><b>Upload Picture</b></label>
-                            <div>
-                                <input id="File" type="file" capture="camera" accept="image/jpeg, image/png" name="reportpicture" required />
+                            <div  class="custom-file mb-2">
+                                <input type="file" id="File" class="custom-file-input" capture="camera" accept="image/jpeg, image/png" name="reportpicture" required>
+                                <label class="custom-file-label" for="customFile">Choose file</label>
+
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Full name</label>
+                            <label class="control-label"><b>Full name</b></label>
                             <div>
-                                <input type="text" pattern="[a-zA-Z\s]{1,20}" class="form-control input-lg" name="reporterName">
+                                <input type="text" pattern="{1,20}" class="form-control input-lg" name="reporterName"
+                                    required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Phone Number</label>
+                            <label class="control-label"><b>Phone Number</b></label>
                             <div>
-                                <input type="tel"  pattern="[0-9]{10}" class="form-control input-lg" name="reporterPhone">
+                                <input type="tel" pattern="[0-9]{10}" class="form-control input-lg"
+                                    name="reporterPhone">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Email adress</label>
+                            <label class="control-label"><b>Email adress</b></label>
                             <div>
-                                <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" class="form-control input-lg" name="reporterEmail">
+                                <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+                                    class="form-control input-lg" name="reporterEmail" required>
                             </div>
                         </div>
-                        <input type="hidden" id="lat" name="lat"/>
-                        <input type="hidden" id="lng" name="lng"/>
+
+                        <input type="hidden" id="latitude" name="latitude" />
+                        <input type="hidden" id="longitude" name="longitude" />
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-info" id="btn">Send your report!</button>
-                                <button type="Cancel" class="btn btn-info" id="cancelBtn" formnovalidate>Cancel</button>
+                                <button type="submit" class="btn btn-info" id="button">Submit</button>
+                                <button type="button" class="btn btn-info" id="buttonC">Cencel</button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-     <!-- End Toggle form -->
-    <!-- footer -->
+            </div>
+        </div>
+    </div>
+    <!-- End Toggle form -->
+
+    <!-- Footer -->
     <footer>
         <div class="row ncolor">
             <div class="col-md-12">
                 <a href="tel:03-6013601"><i class="fa fa-phone fa-4x" aria-hidden="true"></i></a>
-                <button class="info" onclick="myFunction()"><img src="Images/info 2.png" height="50px" width="50px"></button>
+                <button class="info" onclick="myFunction()"><img src="Images/info 2.png" height="50px"
+                        width="50px"></button>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
