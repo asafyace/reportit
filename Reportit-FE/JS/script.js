@@ -80,12 +80,12 @@ $().ready(function () {
 });
 
 //Close Toggle form
-$(document).ready(function () {
-    $("#buttonC").click(function () {
-        location.replace("https://reportit.netlify.com/")
-    });
-});
-
+$(document).ready(function(){
+    $("#buttonC").click(function(){
+      location.replace("https://reportit.netlify.com/")
+      });
+  });
+  
 //FAQ Menu
 //Accordian Action
 var action = 'click';
