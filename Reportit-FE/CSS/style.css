@@ -207,7 +207,7 @@ footer {
 
 #button {
     display: inline-block;
-    padding: 15px 25px;
+    padding: 8px 18px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -216,7 +216,7 @@ footer {
     color: #fff;
     background-color: #4CAF50;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 9px #999;
   }
   
@@ -230,7 +230,7 @@ footer {
 
   #buttonC {
     float: right;
-    padding: 15px 25px;
+    padding: 8px 18px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;
@@ -239,14 +239,14 @@ footer {
     color: #fff;
     background-color:red;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     box-shadow: 0 9px #999;
   }
-  #buttonC:hover {background-color: red}
+  #buttonC:hover {background-color: rgb(112, 19, 19)}
 
   #buttonC:active {
     background-color: red;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
 

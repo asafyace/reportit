@@ -1,9 +1,11 @@
 //info messege
 function myFunction() {
-    swal("💻Our Team💻", "We are dedicated to making a safer world. \n ReportIt - an easy reporting system! \n \n Reportit gives you an easy way to report about municipal hazards" ,"success")}
+    swal("💻Our Team💻", "We are dedicated to making a safer world. \n ReportIt - an easy reporting system! \n \n Reportit gives you an easy way to report about municipal hazards", "success")
+}
 
 //Google map
-var map, infoWindow,pos;
+var map, infoWindow, pos;
+
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -33,8 +35,9 @@ function initMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    
+
 }
+
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
@@ -42,61 +45,67 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
-//Image validation 
 
+
+//File upload name fix
 $().ready(function () {
-    $('[type="file"]').change(function () {
+    $(".custom-file-input").on("change", function () {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+});
+
+//Image validation 
+$().ready(function () {
+    $(".custom-file-input").change(function () {
         var fileInput = $(this);
         if (fileInput.length && fileInput[0].files && fileInput[0]
             .files.length) {
+
             var url = window.URL || window.webkitURL;
             var image = new Image();
+
             image.onerror = function () {
                 swal({
                     title: "Please upload a JPEG or JPG or PNG picture format!",
                     icon: "warning",
                     dangerMode: true,
                 })
-                document.getElementById('File').value = "";
-            };
+                document.getElementById("FileL").innerHTML = "Choose File";
+                document.getElementById('File').innerHTML = "";
+            }
             image.src = url.createObjectURL(fileInput[0].files[0]);
-            $().ready(function () {
-                $(".custom-file-input").on("change", function () {
-                    var fileName = $(this).val().split("\\").pop();
-                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
-                });
-            });
-        }
+        } 
     });
 });
 
 //Close Toggle form
-$(document).ready(function(){
-    $("#buttonC").click(function(){
-      location.replace("https://reportit.netlify.com/")
-      });
-  });
-  
+$(document).ready(function () {
+    $("#buttonC").click(function () {
+        location.replace("https://reportit.netlify.com/")
+    });
+});
+
 //FAQ Menu
 //Accordian Action
 var action = 'click';
 var speed = "500";
 //Document.Ready
-$(document).ready(function(){
-  //Question handler
-$('li.q').on(action, function(){
-  //gets next element
-  //opens .a of selected question
-$(this).next().slideToggle(speed)
-    //selects all other answers and slides up any open answer
-    .siblings('li.a').slideUp();
-  //Grab img from clicked question
-var img = $(this).children('img');
-  //Remove Rotate class from all images except the active
-  $('img').not(img).removeClass('rotate');
-  //toggle rotate class
-  img.toggleClass('rotate');
-});//End on click
-});//End Ready
+$(document).ready(function () {
+    //Question handler
+    $('li.q').on(action, function () {
+        //gets next element
+        //opens .a of selected question
+        $(this).next().slideToggle(speed)
+            //selects all other answers and slides up any open answer
+            .siblings('li.a').slideUp();
+        //Grab img from clicked question
+        var img = $(this).children('img');
+        //Remove Rotate class from all images except the active
+        $('img').not(img).removeClass('rotate');
+        //toggle rotate class
+        img.toggleClass('rotate');
+    }); //End on click
+}); //End Ready
 
 // Add the following code if you want the name of the file appear on select
