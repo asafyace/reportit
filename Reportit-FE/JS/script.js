@@ -5,7 +5,6 @@ function myFunction() {
 
 //Google map
 var map, infoWindow, pos;
-
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {
@@ -37,7 +36,6 @@ function initMap() {
     }
 
 }
-
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ?
@@ -46,9 +44,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
-
 //File upload name fix
-$().ready(function () {
+$(document).ready(function () {
     $(".custom-file-input").on("change", function () {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
@@ -56,22 +53,20 @@ $().ready(function () {
 });
 
 //Image validation 
-$().ready(function () {
+$(document).ready(function () {
     $(".custom-file-input").change(function () {
         var fileInput = $(this);
         if (fileInput.length && fileInput[0].files && fileInput[0]
             .files.length) {
-
             var url = window.URL || window.webkitURL;
             var image = new Image();
-
             image.onerror = function () {
                 swal({
                     title: "Please upload a JPEG or JPG or PNG picture format!",
                     icon: "warning",
                     dangerMode: true,
                 })
-                document.getElementById("FileL").innerHTML = "Choose File";
+                document.getElementById("FileL").innerHTML = "Picture of the hazard";
                 document.getElementById('File').innerHTML = "";
             }
             image.src = url.createObjectURL(fileInput[0].files[0]);
@@ -108,4 +103,3 @@ $(document).ready(function () {
     }); //End on click
 }); //End Ready
 
-// Add the following code if you want the name of the file appear on select
