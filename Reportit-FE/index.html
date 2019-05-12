@@ -42,14 +42,13 @@
         <div class="collapse navbar-collapse " id="collapsibleNavbar">
             <ul class="navbar-nav mr-auto col-sm-3 col-md-3 ">
                 <li class="nav-item ">
-                    <a class="nav-link " href="index.html"><i class="fa fa-home fa-4x " aria-hidden="true"> Home</i></a>
+                    <a class="nav-link " href="index.html"><i class="fa fa-home fa-3x">&nbsp;&nbsp;Home</i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link " href="mailto:contact@reportit.com"><i class="fa fa-envelope fa-4x ">
-                            Contact</i></a>
+                    <a class="nav-link " href="mailto:contact@reportit.com"><i class="fa fa-envelope fa-3x">&nbsp;&nbsp;Contact</i></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="Includes/FAQ.htm"><i class="fa fa-question fa-4x"> FAQ</i></a>
+                    <a class="nav-link" href="Includes/FAQ.htm"><i class="fa fa-question fa-3x">&nbsp;&nbsp;&nbsp;&nbsp;FAQ</i></a>
                 </li>
             </ul>
         </div>
@@ -101,13 +100,6 @@
                     <form action="https://report-it.herokuapp.com/reports/create" method="post"
                         enctype="multipart/form-data" id="reportForm">
                         <div class="form-group">
-                            <label class="control-label"><b>Upload Picture</b></label>
-                            <div  class="custom-file mb-2">
-                                <input type="file" id="File" class="custom-file-input" capture="camera" accept="image/jpeg, image/png" name="reportpicture" required>
-                                <label class="custom-file-label"  id="FileL" for="customFile">Choose file</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="control-label"><b>Full name</b></label>
                             <div>
                                 <input type="text" pattern="{1,20}" class="form-control input-lg" name="reporterName"
@@ -128,7 +120,13 @@
                                     class="form-control input-lg" name="reporterEmail" required>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label class="control-label"><b>Upload Picture</b></label>
+                            <div  class="custom-file mb-2">
+                                <input type="file" id="File" class="custom-file-input" capture="camera" accept="image/jpeg, image/png" name="reportpicture" required>
+                                <label class="custom-file-label"  id="FileL" for="customFile">Picture of the hazard</label>
+                            </div>
+                        </div>
                         <input type="hidden" id="latitude" name="latitude" />
                         <input type="hidden" id="longitude" name="longitude" />
                         <div class="form-group">

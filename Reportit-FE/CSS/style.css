@@ -58,6 +58,7 @@ i {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 20px;
 
 }
 
@@ -138,6 +139,20 @@ footer {
     border-radius: 120px;
     -webkit-animation: ripple 1.8s infinite;
     animation: ripple 1.8s infinite
+}
+@media only screen and (max-width: 600px) {
+    .intro-banner-vdo-play-btn .ripple {
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        left: 52%;
+        bottom: 200%;
+        opacity: 0;
+        margin: -80px 0 0 -80px;
+        border-radius: 120px;
+        -webkit-animation: ripple 1.8s infinite;
+        animation: ripple 1.8s infinite
+    }
 }
 
 @-webkit-keyframes ripple {
