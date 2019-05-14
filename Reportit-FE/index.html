@@ -28,9 +28,38 @@
     <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' rel='stylesheet' />
     <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed" rel="stylesheet">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+
+    <script>
+    
+        $(function() {
+            $('#reportForm').ajaxForm({
+                url: "https://report-it.herokuapp.com/reports/create",
+                dataType: 'json',
+                crossDomain: true,
+                succes: function (resp) {
+                    console.log(resp);
+                    return false;
+                },
+                error: function(err) {
+                    console.log(err);
+                    return false;
+                },
+                beforeSubmit: function(arr, $form, opts) {
+                    console.log(opts);
+                    opts['headers'] = {
+                        "Access-Control-Allow-Origin": '*',
+                        "Access-Control-Allow-Credentials": true,
+                        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+                        "Access-Control-Allow-Headers": 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
+                    };
+                    return true;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body id="fonti">
@@ -98,7 +127,7 @@
                 </div>
                 <img class="center" src="Images/reporticon.png" alt="reporticon" height="42" width="42" />
                 <div class="modal-body">
-                    <form action="https://report-it.herokuapp.com/reports/create" method="post"
+                    <form method="post"
                         enctype="multipart/form-data" id="reportForm">
                         <div class="form-group">
                             <label class="control-label"><b>Full name</b></label>
@@ -132,7 +161,7 @@
                         <input type="hidden" id="longitude" name="longitude" />
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-success" id="button">Submit</button>
+                                <button type="submit" class="btn btn-success" id="submitForm">Submit</button>
                                 <button type="button" class="btn btn-info" id="buttonC">Cancel</button>
                             </div>
                         </div>

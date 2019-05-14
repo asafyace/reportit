@@ -50,6 +50,7 @@ $(document).ready(function () {
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
+    
 });
 
 //Image validation 
@@ -74,13 +75,19 @@ $(document).ready(function () {
     });
 });
 
-//Close Toggle form
+
 $(document).ready(function(){
+    //Close Toggle form
     $("#buttonC").click(function(){
       location.replace("https://reportit.netlify.com/")
       });
+    //send Toggle form
+
+   
+      
   });
   
+
 //FAQ Menu
 //Accordian Action
 var action = 'click';
