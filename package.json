@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/asafyace/Reportit#readme",
   "dependencies": {
-    "env-cmd": "^8.0.2"
+    "env-cmd": "^10.1.0"
   }
 }
